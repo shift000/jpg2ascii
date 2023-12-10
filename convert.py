@@ -51,7 +51,7 @@ if args.inverted:
 spacer = ""
 tuneR, tuneG, tuneB = 8, 1, 4
 
-if args.file:		# SYS ARGUMENT
+if args.file:
 	file = args.file
 else:
 	print("No file given")
@@ -99,14 +99,12 @@ for i, i_w in enumerate(im):
 		try:
 			val = int((tuneR*(i_h[0]/100) + tuneG*(i_h[1]/100) + tuneB*(i_h[2]/100)))
 		except IndexError:
-			#print(f"mumble mumble {y} {x}")
 			continue
 			
 		if val > 20:
 			continue
 		
 		mace[y][x] += val
-			
 mmax = max(mace[1])
 
 for i, itemW in enumerate(mace):
